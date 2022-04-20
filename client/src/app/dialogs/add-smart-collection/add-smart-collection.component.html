@@ -1,0 +1,48 @@
+<ui-dialog-header>
+  Smart Collection
+</ui-dialog-header>
+<ui-dialog-content [scrollable]="false">
+  <div fxLayout="column" fxLayoutGap="20px">
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+      <div fxLayoutAlign="center center" fxLayout="row" fxLayoutGap="10px">
+        <div>Match images that match</div>
+        <ui-select [(ngModel)]="match" width="60px">
+          <ui-option value="all">All</ui-option>
+          <ui-option value="any">Any</ui-option>
+        </ui-select>
+        <div [ngSwitch]="match">
+          <span *ngSwitchCase="'all'">rules.</span>
+          <span *ngSwitchCase="'any'">rule.</span>
+        </div>
+      </div>
+      <div>
+        <button ui-button-icon (click)="addTest()">
+          <fa-icon [icon]="faAdd"></fa-icon>
+        </button>
+      </div>
+    </div>
+    <div>
+      <input ui-input placeholder="Rule Name" [(ngModel)]="ruleName">
+    </div>
+    <div fxLayout="column" fxLayoutGap="5px" class="scroll-area scroll-dark-1">
+      <div *ngFor="let test of tests" fxLayout="row" fxLayoutGap="5px">
+        <ui-select [(ngModel)]="test.ruleType" fxFlex="0 1" (ngModelChange)="setComparisons($event, test)">
+          <ui-option [value]="type" *ngFor="let type of test.ruleTypes">{{type}}</ui-option>
+        </ui-select>
+        <ui-select [(ngModel)]="test.ruleComparison" fxFlex="0 1">
+          <ui-option [value]="type" *ngFor="let type of test.ruleComparisons">{{type}}</ui-option>
+        </ui-select>
+        <input ui-input [type]="test.ruleValueType" [(ngModel)]="test.ruleValue" fxFlex="0 1">
+        <div>
+          <button ui-button-icon color="secondary" (click)="removeTest(test)" [disabled]="tests.length===1">
+            <fa-icon [icon]="faDelete"></fa-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</ui-dialog-content>
+<ui-dialog-actions>
+  <button ui-button-flat ui-dialog-close color="tertiary">Cancel</button>
+  <button ui-button-flat (click)="addCollection()" [disabled]="invalid">Add</button>
+</ui-dialog-actions>

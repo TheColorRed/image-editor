@@ -1,0 +1,19 @@
+<div fxLayout="column" fxLayoutGap="20px" fxFlex="0 1" fxFill>
+  <div fxLayout="row" fxLayoutAlign="center center">
+    <input ui-input #q placeholder="Search Collections" fxFlex="0 1" [(ngModel)]="searchString">
+    <button ui-button-icon-basic (click)="searchType.toggle()">
+      <fa-icon [icon]="faCog"></fa-icon>
+    </button>
+    <ui-popup-menu #searchType>
+      <div ui-popup-menu-item toggleGroup="search" (toggled)="setSearchType('fuzzy')" [checked]="true">Fuzzy Search</div>
+      <div ui-popup-menu-item toggleGroup="search" (toggled)="setSearchType('text')">Text Search</div>
+    </ui-popup-menu>
+  </div>
+
+  <div fxFill>
+    <ng-container *ngFor="let group of groups">
+      <group *ngIf="group.displayState!=='hidden'" [group]="group" [minimized]="group.displayState==='minimized'" [maximized]="group.displayState==='maximized'" [restored]="group.displayState==='restored'"></group>
+    </ng-container>
+
+  </div>
+</div>

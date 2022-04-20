@@ -1,0 +1,25 @@
+{
+  "extends": "ts-node/node16/tsconfig.json",
+  "ts-node": {
+    "transpileOnly": true,
+    "files": true,
+    "emit": true
+  },
+  "compilerOptions": {
+    "strict": false,
+    "outDir": "./dist/",
+    "noImplicitAny": true,
+    "target": "es2017",
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "preserveSymlinks": true,
+    "esModuleInterop": true,
+    "types": [
+      "definitions",
+      "node"
+    ],
+  },
+  "include": [
+    "src/**/*.ts"
+  ]
+}

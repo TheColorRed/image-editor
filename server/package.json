@@ -1,0 +1,45 @@
+{
+  "name": "server",
+  "scripts": {
+    "start": "nodemon -r dotenv/config --watch .env --watch src --watch migrations src/index.ts localhost 8080",
+    "run:dev": "nodemon build/index.js"
+  },
+  "dependencies": {
+    "@tensorflow-models/coco-ssd": "^2.2.2",
+    "@tensorflow-models/mobilenet": "^2.1.0",
+    "@tensorflow/tfjs": "^3.15.0",
+    "@tensorflow/tfjs-node": "^3.15.0",
+    "canvas": "^2.9.0",
+    "cors": "^2.8.5",
+    "exif": "^0.6.0",
+    "exiftool-vendored": "^16.1.0",
+    "express": "^4.17.3",
+    "fast-glob": "^3.2.11",
+    "fs-extra": "^10.0.1",
+    "node-fetch": "^3.2.3",
+    "node-iptc": "^1.0.5",
+    "rxjs": "^7.5.5",
+    "sqlite3": "^5.0.2",
+    "ws": "^8.5.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.12",
+    "@types/exif": "^0.6.3",
+    "@types/fs-extra": "^9.0.13",
+    "@types/glob": "^7.2.0",
+    "@types/node": "^17.0.21",
+    "@types/sqlite3": "^3.1.8",
+    "definitions": "file:../definitions",
+    "dotenv": "^16.0.0",
+    "nodemon": "^2.0.15",
+    "ts-loader": "^9.2.7",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.3",
+    "webpack": "^5.70.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.7.4",
+    "webpack-node-externals": "^3.0.0",
+    "webpack-shell-plugin": "^0.5.0",
+    "webpack-shell-plugin-next": "^2.2.2"
+  }
+}

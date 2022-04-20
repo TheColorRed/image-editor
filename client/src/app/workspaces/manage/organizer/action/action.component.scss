@@ -1,0 +1,9 @@
+.action {
+  // color: #0fb30f;
+  cursor: pointer;
+
+  &.disabled {
+    color: var(--colors-dark-4);
+    opacity: 0.4;
+  }
+}

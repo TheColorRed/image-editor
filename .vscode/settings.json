@@ -1,0 +1,41 @@
+{
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "typescript.tsserver.experimental.enableProjectDiagnostics": true,
+  // "typescript.format.semicolons": "insert",
+  // "typescript.inlayHints.parameterNames.enabled": "none",
+  // "typescript.inlayHints.functionLikeReturnTypes.enabled": false,
+  // "typescript.inlayHints.enumMemberValues.enabled": false,
+  // "typescript.inlayHints.parameterTypes.enabled": false,
+  "angular.log": "verbose",
+  "cSpell.words": [
+    "AINS",
+    "astype",
+    "exif",
+    "fullkey",
+    "ifnull",
+    "iptc",
+    "mobilenet",
+    "ndarray",
+    "pywebview",
+    "tfjs",
+    "xphoto"
+  ],
+  "python.analysis.extraPaths": [
+    "${workspaceFolder}/image-processor/Source"
+  ],
+  "python.formatting.autopep8Args": [
+    "--max-line-length=120"
+  ],
+  "[python]": {
+    "gitlens.codeLens.symbolScopes": [
+      "!Module"
+    ],
+    "editor.wordBasedSuggestions": false,
+    "editor.tabSize": 4,
+    "editor.wordWrapColumn": 120,
+    "editor.wordWrap": "off",
+    "editor.rulers": [
+      120
+    ]
+  }
+}

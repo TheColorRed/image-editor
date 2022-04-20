@@ -1,0 +1,29 @@
+:host {
+  &.maximized {
+    display: block;
+    height: 100%;
+    .group-container {
+      max-height: initial;
+    }
+  }
+
+  .group-container {
+    max-height: calc((100vh - 440px) / 4);
+    min-height: calc((100vh - 440px) / 4);
+    // border: solid 1px red;
+    .collection-items {
+      height: 100%;
+      overflow: auto;
+    }
+    .group {
+      padding-left: 8px;
+      height: 30px;
+      min-height: 30px;
+      text-transform: uppercase;
+      background: var(--color-dark-2);
+      .add {
+        cursor: pointer;
+      }
+    }
+  }
+}

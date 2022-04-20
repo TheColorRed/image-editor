@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "module": "CommonJS",
+    "types": [
+      "node"
+    ],
+    "typeRoots": [
+      "."
+    ]
+  },
+  "files": [
+    "index.d.ts",
+    "src/collections.d.ts"
+  ],
+  "include": [
+    "src/**/*.ts"
+  ]
+}

@@ -1,0 +1,89 @@
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "paths": {
+      "@ui/ui/*": [
+        "./projects/*/src/public-api.ts"
+      ],
+      "autocomplete": [
+        "dist/autocomplete/autocomplete",
+        "dist/autocomplete"
+      ],
+      "backdrop": [
+        "dist/backdrop/backdrop",
+        "dist/backdrop"
+      ],
+      "button": [
+        "dist/button/button",
+        "dist/button"
+      ],
+      "core": [
+        "dist/core/core",
+        "dist/core"
+      ],
+      "dialog": [
+        "dist/dialog/dialog",
+        "dist/dialog"
+      ],
+      "divider": [
+        "dist/divider/divider",
+        "dist/divider"
+      ],
+      "input": [
+        "dist/input/input",
+        "dist/input"
+      ],
+      "option": [
+        "dist/option/option",
+        "dist/option"
+      ],
+      "popup-menu": [
+        "dist/popup-menu/popup-menu",
+        "dist/popup-menu"
+      ],
+      "select": [
+        "dist/select/select",
+        "dist/select"
+      ],
+      "slider": [
+        "dist/slider/slider",
+        "dist/slider"
+      ],
+      "tabs": [
+        "dist/tabs/tabs",
+        "dist/tabs"
+      ],
+      "tooltip": [
+        "dist/tooltip/tooltip",
+        "dist/tooltip"
+      ]
+    },
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2017",
+    "module": "es2020",
+    "lib": [
+      "es2020",
+      "dom"
+    ]
+  },
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
+  }
+}

@@ -1,0 +1,8 @@
+autopep8==1.6.0
+numpy==1.22.3
+Pillow==9.1.0
+pipenv==2022.4.8
+pythonnet @ file:///C:/Users/untun/Downloads/pythonnet-2.5.2-cp39-cp39-win_amd64.whl
+pywebview==3.6.3
+watchdog==2.1.7
+websockets==10.2

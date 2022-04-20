@@ -1,0 +1,9 @@
+<div fxLayout="column" fxLayoutGap="20px" fxFlex="0 1">
+  <div ui-button-group [fill]="true" [(ngModel)]="browsing">
+    <button ui-button-flat [value]="collections">Collections</button>
+    <button ui-button-flat [value]="computer">Computer</button>
+  </div>
+  <div fxFlex="0 1">
+    <ng-container [ngComponentOutlet]="browsing"></ng-container>
+  </div>
+</div>

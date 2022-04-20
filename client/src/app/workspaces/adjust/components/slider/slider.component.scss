@@ -1,0 +1,15 @@
+.field {
+  padding: 20px;
+}
+.input-toggle {
+  cursor: pointer;
+  border-bottom: dashed 1px var(--color-secondary);
+}
+input[type='number'] {
+  text-align: center;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

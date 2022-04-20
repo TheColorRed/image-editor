@@ -1,0 +1,57 @@
+<div class="organizer" fxFlex="1 0" fxFill fxLayout="column" fxLayoutGap="10px">
+  <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="space-between">
+    <div fxLayout="row" fxLayoutGap="10px">
+      <div ui-button-group color="gray" (selected)="action($event)" fxLayout="row" [toggles]="false">
+        <button ui-button-flat [icon-action]="rotateLeft" [disabled]="true" value="rotate-left"></button>
+        <button ui-button-flat [icon-action]="rotateRight" [disabled]="true" value="rotate-right"></button>
+      </div>
+      <div ui-divider></div>
+      <div ui-button-group color="gray" [toggles]="false">
+        <button ui-button-flat [icon-action]="edit" [disabled]="true" value="adjust" (click)="adjustImage()"></button>
+        <!-- <button ui-button-flat [icon-action]="edit" [disabled]="true" value="edit2"></button> -->
+      </div>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+      <div fxFlex="150px" fxLayoutGap="15px" style="text-align: right;">
+        <span>{{displayImages.length|number}}</span>
+        <span>/</span>
+        <span>{{images.length|number}}</span>
+      </div>
+      <input [(ngModel)]="filter" [disabled]="!collection" #filterInput fxFlex="200px" ui-input type="text" placeholder="Filter Images">
+    </div>
+  </div>
+  <cdk-virtual-scroll-viewport [orientation]="scrollDirection" itemSize="200" class="scroll-wrapper scroll-dark-1" fxFlex="0 1" #scrollWrapper>
+
+    <!-- Display film layout -->
+    <ng-container *ngIf="layout==='film'">
+      <ng-container *cdkVirtualFor="let img of displayImages">
+        <ng-container *ngTemplateOutlet="filmScroll;context:{img}"></ng-container>
+      </ng-container>
+    </ng-container>
+
+    <!-- Display grid layout -->
+    <ng-container *ngIf="layout==='grid'">
+      <ng-container *cdkVirtualFor="let img of displayImages">
+        <ng-container *ngTemplateOutlet="gridScroll;context:{imgs:img}"></ng-container>
+      </ng-container>
+    </ng-container>
+  </cdk-virtual-scroll-viewport>
+</div>
+
+<ng-template #filmScroll let-img="img">
+  <div class="img" fxFlex="200px" (click)="previewImage(img)" [ngClass]="{
+      selected: img.file===selectedImage?.file
+    }">
+    <img [src]="img.url.large" [style.max-width]="img.size.width+'px'" [style.max-height]="img.size.height+'px'" loading="lazy">
+  </div>
+</ng-template>
+
+<ng-template #gridScroll let-imgs="imgs">
+  <ng-container *ngFor="let img of imgs">
+    <div class="img" fxFlex="200px" (click)="previewImage(img)" [ngClass]="{
+      selected: img.file===selectedImage?.file
+    }" [style.height]="'200px'">
+      <img [src]="img.url.large" [style.max-width]="img.size.width+'px'" [style.max-height]="img.size.height+'px'" loading="lazy">
+    </div>
+  </ng-container>
+</ng-template>

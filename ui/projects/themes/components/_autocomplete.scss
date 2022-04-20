@@ -1,0 +1,12 @@
+.ui-autocomplete {
+  width: 100%;
+  background-color: var(--color-dark-3);
+}
+
+.ui-autocomplete-items {
+  background-color: var(--color-dark-3);
+  min-width: 100px;
+  margin-top: 2px;
+  box-shadow: var(--elevation-bottom);
+  width: 100%;
+}

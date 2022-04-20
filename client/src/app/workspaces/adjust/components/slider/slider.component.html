@@ -1,0 +1,8 @@
+<div fxLayout="column" fxFlex="300px" fxLayoutGap="10px" class="field">
+  <div fxLayout="row" style="height: 30px;" fxLayoutAlign="space-between center">
+    <span>{{label}}</span>
+    <span *ngIf="!inputVisible" class="input-toggle" (click)="showInput()">{{val>0 ? '+'+val : val}}</span>
+    <input *ngIf="inputVisible" #textValue type="number" (keyup.enter)="hideInput()" (blur)="hideInput()" [(ngModel)]="value" ui-input fxFlex="50px" (ngModelChange)="inputChanged()">
+  </div>
+  <input ui-slider [min]="min" [max]="max" [step]="step" [(ngModel)]="value">
+</div>

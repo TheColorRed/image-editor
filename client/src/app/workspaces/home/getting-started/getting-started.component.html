@@ -1,0 +1,18 @@
+<div fxLayout="column" fxFlex="0 1" fxLayoutGap="50px" fxFill>
+  <div fxLayout="row" fxLayoutGap="30px" fxLayoutAlign="flex-start" class="actions">
+    <a fxLayoutAlign="center center">
+      <fa-icon [icon]="faAdd" size="2x"></fa-icon>
+    </a>
+    <a fxLayoutAlign="center center">
+      <fa-icon [icon]="faOpen" size="2x"></fa-icon>
+    </a>
+  </div>
+  <hr width="100%">
+  <div fxLayout="row" fxLayoutGap="5px" fxFill>
+    <div class="img" fxFlex="0 1" fxLayoutGap="5px" fxLayout="column" *ngFor="let img of images">
+      <div class="image" style="background-image: url('{{img.url}}');"></div>
+      <div class="name">{{img.name}}</div>
+      <div class="size">{{img.stat.size|size}}</div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<div fxLayout="column" style="max-height: 100vh; height: 100vh;">
+  <div fxLayout="row" fxFlex="45px" fxFill>
+    <workspace-tabs fxLayout="row" fxFill></workspace-tabs>
+  </div>
+  <div fxLayout="column" fxFlex="0 1" fxFill class="workspace-outlet">
+    <ng-container *ngIf="workspace$ | async as workspace" [ngComponentOutlet]="workspace"></ng-container>
+  </div>
+</div>

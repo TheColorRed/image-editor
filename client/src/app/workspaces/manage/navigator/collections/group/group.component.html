@@ -1,0 +1,26 @@
+<div fxLayout="column" class="group-container">
+
+  <!-- Collection Group Label -->
+  <div class="group" fxLayout="row" fxLayoutAlign="space-between center">
+    <div fxLayoutGap="10px">
+      <span *ngIf="group.icon"><fa-icon [icon]="group.icon.icon" [fixedWidth]="true"></fa-icon></span>
+      <span>{{group.label}}</span>
+    </div>
+    <!-- Collection Group Actions -->
+    <div fxLayout="row">
+      <div *ngFor="let action of group.actions">
+        <ng-container *ngIf="action.active===true||action.active===undefined">
+          <button ui-button-icon-basic class="add" *ngIf="action.action" (click)="performAction($event, action)">
+          <fa-icon [icon]="action.icon" [spin]="action.spin"></fa-icon>
+        </button>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+
+  <div class="collection-items scroll-dark-0">
+    <!-- Collection Item -->
+    <collection *ngFor="let collection of group.collections" [collection]="collection" [group]="group"></collection>
+  </div>
+
+</div>

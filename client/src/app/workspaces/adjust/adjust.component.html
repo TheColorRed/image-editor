@@ -1,0 +1,26 @@
+<div *ngIf="{
+  fileInfo: activeImage$ | async,
+  image: image$ | async,
+  adjustment: adjustment$ | async
+} as image" fxLayout="column" fxFlex="0 1" fxFill>
+  <div #previewArea fxLayoutAlign="center center" fxFill fxFlex="0 1" style="overflow: auto;">
+    <canvas #canvas [width]="width" [height]="height" [style.max-width]="maxWidth" [style.max-height]="maxHeight"></canvas>
+  </div>
+  <div *ngIf="!image.adjustment" fxFlex="200px" fxLayout="row" class="options" fxLayoutAlign="center center">
+    <action [icon]="autoIcon" label="One Step Photo Fix"></action>
+    <action [icon]="contrastIcon" label="Brightness/Contrast" [component]="BrightnessContrastComponent" (click)="editAdjustment($event)"></action>
+    <action [icon]="whiteBalanceIcon" label="White Balance" [component]="WhiteBalanceComponent" (click)="editAdjustment($event)"></action>
+    <action [icon]="colorAdjustIcon" label="Color Adjust" [component]="ColorAdjustComponent" (click)="editAdjustment($event)"></action>
+    <action [icon]="sharpenIcon" label="High Pass Sharpen" [component]="HighPassSharpenComponent" (click)="editAdjustment($event)"></action>
+    <action [icon]="toneMappingIcon" label="Local Tone Mapping"></action>
+    <action [icon]="fillLightClarityIcon" label="Fill Light/Clarity"></action>
+    <action [icon]="vibrancyIcon" label="Vibrancy"></action>
+    <action [icon]="fadeCorrectionIcon" label="Fade Correction"></action>
+    <action [icon]="cropIcon" label="Crop"></action>
+  </div>
+  <div *ngIf="image.adjustment" fxFlex="200px" fxLayout="row" class="options" fxLayoutAlign="center center" fxFill>
+    <div fxFill fxLayout="column" fxLayoutAlign="center stretch">
+      <ng-container [ngComponentOutlet]="image.adjustment"></ng-container>
+    </div>
+  </div>
+</div>

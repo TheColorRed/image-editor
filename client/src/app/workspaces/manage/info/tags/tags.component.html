@@ -1,0 +1,22 @@
+<div *ngIf="image$ | async as image">
+  <div fxLayout="column">
+    <div fxLayout="row">
+      <input ui-input #tag (keyup.enter)="addTag(tag.value, image)" [autocomplete]="auto" placeholder="Type to add a tag">
+      <button ui-button-icon (click)="addTag(tag.value, image)">
+        <fa-icon [icon]="faAdd"></fa-icon>
+      </button>
+    </div>
+    <div class="added-tags scroll-dark-0">
+      <div *ngFor="let tag of image.tags" class="tag" fxLayout="row" fxLayoutAlign="space-between center">
+        <span>{{tag}}</span>
+        <button ui-button-icon-basic (click)="removeTag(tag, image)">
+        <fa-icon [icon]="faRemove"></fa-icon>
+      </button>
+      </div>
+    </div>
+  </div>
+
+  <ui-autocomplete #auto="autocomplete">
+    <ui-option [value]="tag" *ngFor="let tag of existingTags">{{tag}}</ui-option>
+  </ui-autocomplete>
+</div>

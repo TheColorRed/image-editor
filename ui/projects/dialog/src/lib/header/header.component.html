@@ -1,0 +1,10 @@
+<div class="ui-dialog-header" fxLayout="row" fxLayoutAlign="space-between center" cdkDrag cdkDragHandle cdkDragRootElement=".ui-dialog" cdkDragBoundary=".ui-backdrop">
+  <div>
+    <ng-content></ng-content>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="center center" fxFlex="30px" fxFill>
+    <div class="ui-dialog-header-close" fxFlex="0 1" fxFill fxLayoutAlign="center center" (click)="close()">
+      <fa-icon [icon]="faClose"></fa-icon>
+    </div>
+  </div>
+</div>

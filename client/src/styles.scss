@@ -1,0 +1,30 @@
+@import '@ui/ui/themes/fonts';
+@import '@ui/ui/themes/variables';
+@import '@ui/ui/themes/components/button';
+@import '@ui/ui/themes/components/link';
+@import '@ui/ui/themes/components/input';
+@import '@ui/ui/themes/components/select';
+@import '@ui/ui/themes/components/option';
+@import '@ui/ui/themes/components/popup-menu';
+@import '@ui/ui/themes/components/autocomplete';
+@import '@ui/ui/themes/components/dialog';
+@import '@ui/ui/themes/components/divider';
+@import '@ui/ui/themes/components/slider';
+@import '@angular/cdk/overlay-prebuilt.css';
+body {
+  background: var(--color-dark-0);
+  color: var(--color-light-0);
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  overflow: hidden;
+}
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+
+*:disabled {
+  pointer-events: none;
+}

@@ -1,0 +1,11 @@
+.ui-divider {
+  &.ui-gray {
+    border-right: solid 1px var(--color-gray);
+  }
+  &.ui-gray-light {
+    border-right: solid 1px var(--color-gray-light);
+  }
+  &.ui-gray-dark {
+    border-right: solid 1px var(--color-gray-dark);
+  }
+}

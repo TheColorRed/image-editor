@@ -1,0 +1,10 @@
+{
+  "name": "definitions",
+  "version": "0.0.1",
+  "types": "./index.d.ts",
+  "devDependencies": {
+    "@types/exif": "^0.6.3",
+    "@types/node": "^17.0.21",
+    "exiftool-vendored": "^16.1.0"
+  }
+}

@@ -1,0 +1,32 @@
+<ng-container [ngSwitch]="displayMode">
+  <ng-container *ngSwitchCase="'film'" [ngTemplateOutlet]="film"></ng-container>
+  <ng-container *ngSwitchCase="'grid'" [ngTemplateOutlet]="grid"></ng-container>
+</ng-container>
+<ng-template #film>
+  <div fxLayout="column" fxFlex="0 1" fxFill class="film">
+    <div fxLayout="row" fxFlex="0 1">
+      <navigator fxFlex="400px"></navigator>
+      <preview fxFlex="1 0"></preview>
+      <info fxFlex="400px"></info>
+      <!-- <info fxFlex="400px" *ngIf="imageSelected"></info> -->
+    </div>
+    <div fxLayout="column">
+      <organizer fxFlex="0 0 250px"></organizer>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #grid>
+  <div fxLayout="column" fxFlex="0 1" fxFill>
+    <div fxLayout="row" fxFlex="0 1">
+      <navigator fxFlex="400px"></navigator>
+      <organizer fxFlex="0 1"></organizer>
+      <!-- <preview fxFlex="0 1"></preview>
+      <info fxFlex="400px"></info> -->
+      <!-- <info fxFlex="400px" *ngIf="imageSelected"></info> -->
+    </div>
+    <div fxLayout="column" style="max-width:100vw">
+      <!-- <organizer fxFlex="0 0 250px"></organizer> -->
+    </div>
+  </div>
+</ng-template>

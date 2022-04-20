@@ -1,0 +1,30 @@
+<div fxLayout="row" fxLayoutGap="10px" *ngIf="changes$ | async as changes" fxLayoutAlign="space-between center">
+  <div fxFlex="0 1" fxLayout="row" fxLayoutAlign="flex-start center">
+    <button ui-button-icon-basic size="lg" [round]="true" (click)="reset()">
+      <fa-icon [icon]="iconReset" size="lg"></fa-icon>
+    </button>
+    <div fxFlex="300px" fxLayoutAlign="flex-start center">
+      <ui-select placeholder="Select a mapping" [(ngModel)]="type">
+        <ui-option value="rgb">RGB</ui-option>
+        <ui-option value="hsl">HSL</ui-option>
+      </ui-select>
+    </div>
+  </div>
+  <div fxFlex="0 1" fxLayout="row" fxLayoutGap="20px">
+    <div ui-divider></div>
+    <ng-container *ngIf="type === 'rgb'">
+      <slider label="Red" [(ngModel)]="red" [min]="-255" [max]="255" (ngModelChange)="adjustColor()"></slider>
+      <slider label="Green" [(ngModel)]="green" [min]="-255" [max]="255" (ngModelChange)="adjustColor()"></slider>
+      <slider label="Blue" [(ngModel)]="blue" [min]="-255" [max]="255" (ngModelChange)="adjustColor()"></slider>
+    </ng-container>
+    <ng-container *ngIf="type === 'hsl'">
+      <slider label="Hue" [(ngModel)]="hue" [min]="-180" [max]="180" (ngModelChange)="adjustColor()"></slider>
+      <slider label="Saturation" [(ngModel)]="saturation" [min]="-100" [max]="100" (ngModelChange)="adjustColor()"></slider>
+      <slider label="Lightness" [(ngModel)]="lightness" [min]="-100" [max]="100" (ngModelChange)="adjustColor()"></slider>
+    </ng-container>
+    <div ui-divider></div>
+  </div>
+  <div fxFlex="0 1" fxLayoutAlign="flex-end center">
+    <confirm-reject [path]="changes.file"></confirm-reject>
+  </div>
+</div>

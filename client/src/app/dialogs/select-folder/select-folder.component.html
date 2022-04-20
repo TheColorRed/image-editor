@@ -1,0 +1,33 @@
+<ui-dialog-header>
+  Select Folder
+</ui-dialog-header>
+<ui-dialog-content [scrollable]="false">
+  <div fxLayoutGap="10px" fxLayout="column">
+    <div fxLayout="row" fxLayoutAlign="flex-start center">
+      <input ui-input placeholder="Folder Path" [(ngModel)]="folder" #folderPath />
+      <button ui-button-icon (click)="importOptions.toggle()">
+        <fa-icon [icon]="faCog"></fa-icon>
+      </button>
+      <ui-popup-menu #importOptions>
+        <div ui-popup-menu-item [toggles]="true" (toggled)="updateFolderList($event)">Show Hidden</div>
+        <div ui-popup-menu-item [toggles]="true" [checked]="shouldIncludeSubFolders" (toggled)="includeSubFolders($event)">Include Sub Folders</div>
+      </ui-popup-menu>
+    </div>
+    <div fxLayout="column" class="folders scroll-dark-0">
+      <div *ngIf="!isRoot" (click)="goUpLevel()">
+        <fa-icon [icon]="upLevel" [fixedWidth]="true" flip="horizontal"></fa-icon>
+        Up One
+      </div>
+      <div *ngFor="let folder of folders" (click)="setPath(folder.path)">
+        <div>{{folder.name}}</div>
+      </div>
+    </div>
+  </div>
+</ui-dialog-content>
+<ui-dialog-actions>
+  <div ui-dialog-error *ngIf="folderExists">
+    This folder has already been added.
+  </div>
+  <button ui-button-flat ui-dialog-close color="tertiary">Cancel</button>
+  <button ui-button-flat (click)="save()" [disabled]="invalid">Add</button>
+</ui-dialog-actions>

@@ -1,0 +1,23 @@
+:host {
+  background: var(--color-dark-2);
+  cursor: pointer;
+  height: 30px;
+  place-items: center center;
+  justify-self: flex-end;
+  align-self: flex-end;
+  display: flex;
+  padding: 0 40px;
+  font-size: 0.8rem;
+
+  &:hover:not(.ui-tab-selected) {
+    background: var(--color-dark-3);
+  }
+
+  &.ui-tab-selected {
+    background: var(--color-secondary);
+  }
+
+  &:not(.ui-tab-selected) {
+    background: var(--color-dark-1);
+  }
+}

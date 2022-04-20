@@ -1,0 +1,8 @@
+<div fxLayoutAlign="center center" fxFill>
+  <tabs fxFill [current]="current$|async" (tabChanged)="setWorkspace($event)">
+    <div tab [labelComponent]="homeLabel" [component]="home"></div>
+    <div tab label="Manage" [component]="manageWorkspace" [startActive]="true"></div>
+    <div tab label="Adjust" [component]="adjustWorkspace"></div>
+    <div tab label="Edit" [component]="editWorkspace"></div>
+  </tabs>
+</div>

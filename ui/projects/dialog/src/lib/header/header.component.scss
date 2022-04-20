@@ -1,0 +1,15 @@
+.ui-dialog-header {
+  background-color: var(--color-secondary);
+  height: 30px;
+  & > div:first-child {
+    padding-left: 10px;
+  }
+  & > div:last-child {
+    width: 30px;
+  }
+
+  .ui-dialog-header-close {
+    cursor: pointer;
+    height: 30px;
+  }
+}

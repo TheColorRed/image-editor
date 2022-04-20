@@ -1,0 +1,17 @@
+.ui-popup-menu-items {
+  background-color: var(--color-dark-3);
+  margin: 5px;
+  .ui-popup-menu-item {
+    cursor: pointer;
+    padding-right: 10px;
+    padding-left: 5px;
+    &:hover {
+      background-color: var(--color-dark-3-hover);
+    }
+
+    .ui-popup-menu-item-content {
+      padding: 5px;
+      border-left: solid 1px var(--color-gray);
+    }
+  }
+}

@@ -1,0 +1,13 @@
+<div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="space-between center" [style.width]="width">
+  <div fxFlex="0 1" *ngIf="!_value">{{placeholder}}</div>
+  <div fxFlex="0 1" *ngIf="_value" class="ui-select-value">{{displayText||_value}}</div>
+  <div>
+    <fa-icon [icon]="faArrow" [fixedWidth]="true"></fa-icon>
+  </div>
+</div>
+
+<ng-template #options>
+  <div fxLayout="column" class="ui-select-options">
+    <ng-content select="ui-option"></ng-content>
+  </div>
+</ng-template>

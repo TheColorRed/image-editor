@@ -1,0 +1,14 @@
+.adjust-action {
+  padding: 10px;
+  cursor: pointer;
+  height: 150px;
+  width: 150px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+  text-align: center;
+  font-size: 0.8rem;
+
+  &:hover {
+    background-color: var(--color-dark-2-hover);
+  }
+}

@@ -1,0 +1,30 @@
+.container {
+  height: 50%;
+  width: 75%;
+  // border: solid 1px red;
+  h1 {
+    font-weight: 100;
+  }
+  .navigation {
+    border-right: solid 1px var(--color-dark-3);
+    text-align: right;
+  }
+  .content {
+    height: 500px;
+  }
+  .content,
+  .navigation {
+    padding: 20px;
+    a {
+      padding: 8px 20px 8px 0;
+      margin-right: -23px;
+      border-right: solid 5px transparent;
+      opacity: 0.4;
+      transition: opacity 0.25s ease-in-out;
+      &.selected {
+        opacity: 1;
+        border-right: solid 5px var(--color-secondary);
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+:host {
+  .added-tags {
+    background-color: var(--color-dark-2);
+    height: 200px;
+    overflow: auto;
+    .tag {
+      padding: 0 10px;
+      padding-right: 0;
+      &:hover {
+        cursor: default;
+        background-color: var(--color-dark-2-hover);
+      }
+    }
+  }
+}

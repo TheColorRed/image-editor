@@ -1,0 +1,23 @@
+.ui-slider {
+  background: linear-gradient(to right, var(--color-secondary) 0%, var(--color-secondary) 50%, #fff 50%, #fff 100%);
+  border-radius: 8px;
+  height: 3px;
+  width: 100%;
+  outline: none;
+  transition: background 450ms ease-in;
+  -webkit-appearance: none;
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: var(--color-secondary);
+    border-radius: 100%;
+    cursor: grab;
+  }
+
+  &.grabbing::-webkit-slider-thumb {
+    cursor: grabbing;
+  }
+}

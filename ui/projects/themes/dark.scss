@@ -1,0 +1,60 @@
+$royalblue: #2e55ca;
+$orange: #f26101;
+$gray: #585858;
+:root {
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-error-text: #dd5a5a;
+  --color-dark-0: #121212;
+  --color-dark-1: #1e1e1e;
+  --color-dark-2: #292929;
+  --color-dark-3: #383838;
+  --color-dark-0-hover: #{lighten($color: #121212, $amount: 3)};
+  --color-dark-1-hover: #{lighten($color: #1e1e1e, $amount: 3)};
+  --color-dark-2-hover: #{lighten($color: #292929, $amount: 3)};
+  --color-dark-3-hover: #{lighten($color: #383838, $amount: 3)};
+  --color-light-0: #d4d4d4;
+  --color-light-1: #e1e1e1;
+  --color-light-alpha: rgba(255, 255, 255, 0.2);
+
+  --color-primary: #{$royalblue};
+  --color-primary-hover: #{lighten($color: $royalblue, $amount: 5)};
+  --color-primary-active: #{darken($color: $royalblue, $amount: 10)};
+
+  --color-secondary: #{$orange};
+  --color-secondary-hover: #{lighten($color: $orange, $amount: 5)};
+  --color-secondary-active: #{darken($color: $orange, $amount: 10)};
+
+  --color-gray: #{$gray};
+  --color-gray-light: #{lighten($color: $gray, $amount: 5)};
+  --color-gray-dark: #{darken($color: $gray, $amount: 10)};
+  --color-gray-hover: var(--color-gray-light);
+  --color-gray-active: var(--color-gray-dark);
+}
+
+::-webkit-scrollbar {
+  width: 20px;
+  height: 20px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 100px 100px transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border: 7px solid rgba(0, 0, 0, 0);
+  background-clip: padding-box;
+  border-radius: 50px;
+}
+
+.scroll-dark-0::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 100px 100px var(--color-dark-0);
+}
+
+.scroll-dark-1::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 100px 100px var(--color-dark-1);
+}
+
+.scroll-dark-2::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 100px 100px var(--color-dark-2);
+}

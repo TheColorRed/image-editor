@@ -1,0 +1,28 @@
+<div fxLayout="row" fxLayoutGap="10px" *ngIf="changes$ | async as changes" fxLayoutAlign="space-between center">
+  <div fxFlex="0 1">
+    <button ui-button-icon-basic size="lg" [round]="true" (click)="reset()">
+      <fa-icon [icon]="iconReset" size="lg"></fa-icon>
+    </button>
+    <button ui-button-icon-basic size="lg" [round]="true" (click)="highBrightness()">
+      <fa-icon [icon]="iconBright" size="lg"></fa-icon>
+    </button>
+    <button ui-button-icon-basic size="lg" [round]="true" (click)="lowBrightness()">
+      <fa-icon [icon]="iconDark" size="lg"></fa-icon>
+    </button>
+    <button ui-button-icon-basic size="lg" [round]="true" (click)="highContrast()">
+      <fa-icon [icon]="iconHighContrast" flip="horizontal" size="lg"></fa-icon>
+    </button>
+    <button ui-button-icon-basic size="lg" [round]="true" (click)="lowContrast()">
+      <fa-icon [icon]="iconLowContrast" size="lg"></fa-icon>
+    </button>
+  </div>
+  <div fxFlex="0 1" fxLayout="row" fxLayoutGap="20px">
+    <div ui-divider></div>
+    <slider label="Brightness" [(ngModel)]="brightness" [min]="-127" [max]="127" (ngModelChange)="applyValues()"></slider>
+    <slider label="Contrast" [(ngModel)]="contrast" [min]="-100" [max]="100" (ngModelChange)="applyValues()"></slider>
+    <div ui-divider></div>
+  </div>
+  <div fxFlex="0 1" fxLayoutAlign="flex-end center">
+    <confirm-reject [path]="changes.file"></confirm-reject>
+  </div>
+</div>

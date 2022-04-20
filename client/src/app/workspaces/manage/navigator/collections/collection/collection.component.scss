@@ -1,0 +1,26 @@
+.collection {
+  height: 30px;
+  padding-left: 50px;
+  cursor: pointer;
+  label {
+    cursor: pointer;
+  }
+  .collection-action {
+    opacity: 0;
+  }
+  &:hover {
+    background-color: var(--color-dark-0-hover);
+    .collection-action {
+      opacity: 1;
+    }
+  }
+  &.selected {
+    background-color: var(--color-dark-0);
+    .collection-action {
+      opacity: 1;
+    }
+    label {
+      color: var(--color-secondary);
+    }
+  }
+}

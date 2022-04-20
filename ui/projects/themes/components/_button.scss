@@ -1,0 +1,149 @@
+@mixin button-color {
+  &[color='primary'] {
+    background-color: var(--color-primary);
+    color: var(--color-light);
+    &:hover {
+      background-color: var(--color-primary-hover);
+    }
+    &.active {
+      background-color: var(--color-primary-active);
+    }
+  }
+
+  &[color='secondary'] {
+    background-color: var(--color-secondary);
+    color: var(--color-light);
+    &:hover {
+      background-color: var(--color-secondary-hover);
+    }
+    &.active {
+      background-color: var(--color-secondary-active);
+    }
+  }
+
+  &[color='gray'] {
+    background-color: var(--color-gray);
+    color: var(--color-light);
+    &:hover {
+      background-color: var(--color-gray-hover);
+    }
+    &.active {
+      background-color: var(--color-gray-active);
+    }
+  }
+
+  &[color='tertiary'] {
+    background-color: transparent;
+    color: var(--color-light);
+    &:hover {
+      background-color: transparent;
+    }
+  }
+}
+
+.ui-button {
+  border: 0;
+  padding: 0 16px;
+  height: 30px;
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
+  cursor: pointer;
+
+  &.ui-button-icon {
+    width: 30px;
+    max-width: 30px;
+    padding: 0;
+
+    &.ui-button-round {
+      border-radius: 100%;
+    }
+
+    &.ui-button-stroked {
+      border: solid 1px var(--color-light-0);
+    }
+
+    &.size-lg {
+      width: 64px;
+      height: 64px;
+      max-width: 64px;
+    }
+  }
+
+  &.ui-button-icon-basic {
+    background-color: transparent;
+    color: var(--color-light);
+    &:hover {
+      background-color: rgba($color: #000000, $alpha: 0.15);
+    }
+  }
+
+  @include button-color();
+
+  &.size-xs {
+    font-size: 0.6rem;
+  }
+  &.size-sm {
+    font-size: 0.8rem;
+  }
+  &.size-md {
+    font-size: 1rem;
+  }
+  &.size-lg {
+    font-size: 1.2rem;
+  }
+
+  &:disabled {
+    opacity: var(--disabled-opacity);
+    cursor: default;
+  }
+}
+
+.button-group {
+  display: flex;
+
+  & > button {
+    @include button-color();
+    flex: 0 1;
+  }
+
+  &.fill {
+    & > .ui-button {
+      flex-grow: 1;
+    }
+  }
+  &.row {
+    flex-direction: row;
+  }
+  &.column {
+    flex-direction: column;
+  }
+  &.size-xs {
+    & > .ui-button {
+      font-size: 0.6rem;
+    }
+  }
+  &.size-sm {
+    & > .ui-button {
+      font-size: 0.8rem;
+    }
+  }
+  &.size-md {
+    & > .ui-button {
+      font-size: 1rem;
+    }
+  }
+  &.size-lg {
+    & > .ui-button {
+      font-size: 1.2rem;
+    }
+  }
+  & > .ui-button {
+    &:not(:first-child) {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+    &:not(:last-child) {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+<div (click)="selectCollection(collection)" class="collection" [ngClass]="{
+      selected: isSelected
+    }">
+  <div fxLayoutGap="10px" fxLayoutAlign="space-between center">
+    <label>{{collection.label}}</label>
+    <!-- Collection Actions -->
+    <div fxLayout="row">
+      <button ui-button-icon-basic *ngFor="let action of group.collectionActions" class="collection-action" (click)="performAction($event, action, collection)">
+            <fa-icon [icon]="action.icon" [spin]="action.spin"></fa-icon>
+          </button>
+    </div>
+  </div>
+</div>

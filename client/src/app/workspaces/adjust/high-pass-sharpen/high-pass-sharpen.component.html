@@ -1,0 +1,25 @@
+<div fxLayout="row" fxLayoutGap="10px" *ngIf="changes$ | async as changes" fxLayoutAlign="space-between center">
+  <div fxFlex="0 1">
+    <button ui-button-icon-basic size="lg" [round]="true" (click)="reset()">
+      <fa-icon [icon]="iconReset" size="lg"></fa-icon>
+    </button>
+  </div>
+  <div fxFlex="0 1" fxLayout="row" fxLayoutGap="20px">
+    <div ui-divider></div>
+    <div fxFlex="0 1" fxLayout="row" fxLayoutAlign="center center">
+      <slider label="Radius" [(ngModel)]="radius" [min]="0" [max]="100" (ngModelChange)="applyValues()"></slider>
+      <slider label="Strength" [(ngModel)]="strength" [min]="0" [max]="100" (ngModelChange)="applyValues()"></slider>
+      <div fxFlex="150px" fxLayoutAlign="center center">
+        <ui-select [(ngModel)]="blend" (ngModelChange)="applyValues()">
+          <ui-option value="overlay">Overlay</ui-option>
+          <ui-option value="hard light">Hard Light</ui-option>
+          <ui-option value="soft light">Soft Light</ui-option>
+        </ui-select>
+      </div>
+    </div>
+    <div ui-divider></div>
+  </div>
+  <div fxFlex="0 1" fxLayoutAlign="flex-end center">
+    <confirm-reject [path]="changes.file"></confirm-reject>
+  </div>
+</div>

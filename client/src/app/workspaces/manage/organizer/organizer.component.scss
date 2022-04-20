@@ -1,0 +1,64 @@
+::ng-deep {
+  // [layout='film'] {
+  cdk-virtual-scroll-viewport {
+    & > .cdk-virtual-scroll-content-wrapper {
+      height: inherit;
+    }
+  }
+  // }
+}
+
+::ng-deep {
+  [layout='grid'] {
+    cdk-virtual-scroll-viewport {
+      & > .cdk-virtual-scroll-content-wrapper {
+        display: flex;
+        // flex-direction: row wrap;
+        display: grid !important;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        // gap: 10px;
+        // grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        // grid-template-columns: 50% 50% !important;
+      }
+    }
+  }
+}
+
+:host {
+  .organizer {
+    padding: 20px;
+    padding-bottom: 0;
+    background-color: var(--color-dark-2);
+    height: inherit;
+    .scroll-wrapper {
+      overflow: auto;
+      height: inherit;
+
+      .img {
+        border: solid 3px transparent;
+        cursor: pointer;
+        overflow: hidden;
+        border-radius: 10px;
+        height: inherit;
+        width: 100px;
+        display: inline-flex;
+        place-content: center center;
+        background-color: var(--color-dark-1);
+        margin-right: 10px;
+        align-items: center;
+        max-height: 200px;
+        &.selected {
+          border: solid 3px var(--color-secondary);
+        }
+        .image {
+          height: 100%;
+          max-height: inherit;
+          max-width: 100%;
+          border-radius: 5px;
+          background-size: cover;
+          background-position: center;
+        }
+      }
+    }
+  }
+}

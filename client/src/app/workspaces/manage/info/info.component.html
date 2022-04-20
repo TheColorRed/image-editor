@@ -1,0 +1,19 @@
+<div fxLayout="column" fxLayoutGap="20px">
+
+  <div ui-button-group [fill]="true" [(ngModel)]="section">
+    <button ui-button-flat value="info">Info</button>
+    <button ui-button-flat value="training">Training</button>
+  </div>
+
+  <ng-container [ngSwitch]="section">
+    <ng-container *ngSwitchCase="'info'">
+      <tags></tags>
+      <button ui-button-flat (click)="analyze()">Classify Image</button>
+      <button ui-button-flat (click)="detect()">Detect Objects</button>
+    </ng-container>
+    <ng-container *ngSwitchCase="'training'">
+      <div>Train some images</div>
+    </ng-container>
+  </ng-container>
+
+</div>

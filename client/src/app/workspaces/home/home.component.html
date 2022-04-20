@@ -1,0 +1,21 @@
+<div fxFill fxLayoutAlign="center">
+  <div fxLayout="column" class="container">
+    <h1>Welcome</h1>
+    <div fxLayout="row" fxFlex="0 1">
+      <div class="navigation" fxFlex="250px" fxLayout="column" fxLayoutAlign="space-between">
+        <div fxLayout="column">
+          <a href="" (click)="setContent(gettingStarted)" [ngClass]="{selected:selected===gettingStarted}">Getting Started</a>
+          <a href="" (click)="setContent(workSpace)" [ngClass]="{selected:selected===workSpace}">Workspace</a>
+        </div>
+        <div fxLayout="column">
+          <a href="" [ngClass]="{selected:false}">What's New</a>
+          <a href="" [ngClass]="{selected:false}">Learn</a>
+          <a href="" [ngClass]="{selected:false}">Store</a>
+        </div>
+      </div>
+      <div class="content" fxFlex="0 1">
+        <ng-container *ngIf="selected" [ngComponentOutlet]="selected"></ng-container>
+      </div>
+    </div>
+  </div>
+</div>

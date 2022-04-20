@@ -1,0 +1,3 @@
+<div *ngIf="image$ | async" class="preview" fxLayoutAlign="center center" fxFill fxFlex="0 1">
+  <canvas #canvas [width]="width" [height]="height" [style.max-width]="maxWidth" [style.max-height]="maxHeight"></canvas>
+</div>
